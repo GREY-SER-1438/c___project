@@ -3,4 +3,6 @@ project(c___project)
 
 set(CMAKE_CXX_STANDARD 26)
 
-add_executable(c___project main.cpp)
+add_executable(c___project main.cpp
+        SceneBase.cpp
+        SceneBase.h)
