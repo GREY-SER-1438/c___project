@@ -86,6 +86,5 @@ void ServerRoom1Location::run() {
     cout << "\nВы ищете код...\n";
     cout << "На одном из серверов найден рабочий блок.\n";
     cout << "Дверь открыта.\n";
-    // логика будет позже
     game.currentLocation = &game.serverRoom2Location;
 }
