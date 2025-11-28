@@ -14,4 +14,5 @@ file(GLOB_RECURSE SRC_FILES
 
 add_executable(c___project ${SRC_FILES}
         src/Scenes/CoreLocation-8.cpp
-        include/CoreLocation-8.h)
+        include/CoreLocation-8.h
+        src/Scenes/LocationBase.cpp)

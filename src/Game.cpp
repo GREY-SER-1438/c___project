@@ -2,7 +2,6 @@
 
 Game::Game()
         : startLocation(*this),
-          workshopLocation(*this),
           serverRoom1Location(*this),
           serverRoom2Location(*this),
           fuelCompartment1Location(*this),
