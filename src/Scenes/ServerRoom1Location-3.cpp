@@ -9,7 +9,7 @@ void ServerRoom1Location::run() {
     // --- ВЫБОР 1: включать терминал или нет ---
     cout << "\n1) Включить терминал\n";
     cout << "2) Не осматривать\n";
-    cout << "Ваш выбор: ";
+    cout << "Ваш выбор:\n";
 
     int terminalChoice = ask({1,2});
 
