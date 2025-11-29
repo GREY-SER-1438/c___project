@@ -49,11 +49,30 @@ void FuelCompartment1Location::run() {
 
     if (choice1 == 1) {
         cout <<
-             "\nВы подходите к столу. На нём лежат сломанные перчатки,\n"
-             "разрозненные инструменты и небольшой ЗАЩИТНЫЙ МОДУЛЬ,\n"
-             "используемый для безопасной работы с топливом.\n\n";
-// todo
-        game.fuelCompartment1Location.foundProtectionModule = true;
+             "\nВы подходите к рабочему столу. На нём лежат:\n"
+             "1) Пара потрёпанных перчаток\n"
+             "2) Разрозненный набор инструментов\n"
+             "3) ЗАЩИТНЫЙ МОДУЛЬ (полезен для работы с топливом)\n\n";
+
+        cout << "Что взять?\n";
+
+        int itemChoice = ask({1, 2, 3});
+
+        switch (itemChoice) {
+            case 1:
+                cout << "\nВы берёте перчатки. Вряд ли они сильно помогут…\n\n";
+                break;
+
+            case 2:
+                cout << "\nВы берёте инструменты. Может пригодятся… хотя сомнительно.\n\n";
+                break;
+
+            case 3:
+                cout << "\nВы берёте защитный модуль. Это действительно полезная вещь.\n\n";
+                game.fuelCompartment1Location.foundProtectionModule = true;
+                break;
+        }
+
 
     } else {
         cout <<
