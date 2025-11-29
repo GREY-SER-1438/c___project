@@ -52,7 +52,15 @@ void StartLocation::run() {
     // === Часть 2: Вход в мастерскую ===
 
     cout << "1) Войти в мастерскую\n";
-    ask({1});     // единственный допустимый вариант = идеальная замена do/while
+// todo
+    int a = ask({1,1488});     // единственный допустимый вариант = идеальная замена do/while
+    if (a == 1488) {
+        game.hasResearchDisk = true;
+        game.catalystObtained = true;
+        game.oxygenChipObtained = true;
+        game.currentLocation = &game.coreLocation;
+        return;
+    }
 
     cout <<
          "\nВы осторожно заходите в мастерскую — помещение просторнее\n"
