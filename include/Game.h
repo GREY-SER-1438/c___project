@@ -27,6 +27,11 @@ public:
     // Флаг завершения игры
     bool isRunning = true;
 
+    // Обязательные предметы
+    bool hasResearchDisk = false;
+    bool catalystObtained = false;
+    bool oxygenChipObtained = false;
+
     Game();            // конструктор
     void loop();       // главный цикл игры
     void stop();       // остановка игры

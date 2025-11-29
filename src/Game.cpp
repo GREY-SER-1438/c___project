@@ -10,6 +10,7 @@ Game::Game()
           coreLocation(*this)
 {
     currentLocation = &startLocation; // начинаем со старта
+    srand(static_cast<unsigned>(time(nullptr)));
 }
 
 void Game::loop() {

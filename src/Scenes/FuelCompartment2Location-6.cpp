@@ -55,7 +55,6 @@ void FuelCompartment2Location::run() {
     // ---------------------------------------------------------
     // Часть 2: попытка взять катализатор
     // ---------------------------------------------------------
-    bool catalystObtained = false;
 
     if (!catalystDestroyedEarly && canReachCatalyst) {
         cout <<
@@ -78,7 +77,6 @@ void FuelCompartment2Location::run() {
                 cout <<
                      "\nВы тянетесь к катализатору... но едкий осадок разъедает кожу.\n"
                      "Вы дёргаете рукой, катализатор падает в лужу и расплавляется.\n\n";
-                catalystObtained = false;
                 break;
 
                 // --- 2) Защитный модуль ---
@@ -88,7 +86,7 @@ void FuelCompartment2Location::run() {
                      "\nВы активируете защитный модуль.\n"
                      "Осадок нейтрализован, катализатор теперь безопасен.\n"
                      "Вы аккуратно извлекаете предмет.\n\n";
-                catalystObtained = true;
+                game.catalystObtained = true;
                 break;
 
                 // --- 3) Продувка ---
@@ -106,7 +104,7 @@ void FuelCompartment2Location::run() {
                         cout <<
                              "\nСлабый поток аккуратно сдувает химический осадок.\n"
                              "Катализатор очищен и безопасен.\n\n";
-                        catalystObtained = true;
+                        game.catalystObtained = true;
                         break;
 
                     case 2:
@@ -114,7 +112,6 @@ void FuelCompartment2Location::run() {
                              "\nСильный поток слишком мощный!\n"
                              "Катализатор соскальзывает и падает в лужу топлива.\n"
                              "Он расплавляется.\n\n";
-                        catalystObtained = false;
                         break;
                 }
                 break;
@@ -142,8 +139,10 @@ void FuelCompartment2Location::run() {
     switch (exitChoice) {
         case 1:
             cout << "\nВы начинаете разбирать завал.\n";
+
             if (game.startLocation.tookCrowbar)
                 cout << "Лом позволяет работать гораздо быстрее.\n";
+
             cout << "Через некоторое время путь свободен.\n\n";
             break;
 
@@ -153,6 +152,7 @@ void FuelCompartment2Location::run() {
                  "\nВы надеваете скафандр, герметизируете шлем и открываете шлюз.\n"
                  "Выход в открытый космос — намного быстрее, но очень опасен.\n"
                  "Используя внешние зацепы, вы быстро добираетесь до соседнего отсека.\n\n";
+            enteredViaSpace = true;
             break;
     }
 

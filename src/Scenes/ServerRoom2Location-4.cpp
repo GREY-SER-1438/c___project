@@ -37,8 +37,6 @@ void ServerRoom2Location::run() {
              "\nВы дёргаете ближайший рубильник. Вспышка! Панель искрит, стойки тухнут.\n"
              "Произошло короткое замыкание — жёсткий диск безвозвратно повреждён.\n"
              "Информация об исследованиях утрачена.\n\n";
-
-        game.serverRoom2Location.hasResearchDisk = false;
         return;
     }
 
@@ -79,7 +77,7 @@ void ServerRoom2Location::run() {
              "\nВы вставляете охлаждающий модуль. Температура стойки быстро падает.\n"
              "Без риска извлекаете жёсткий диск с данными исследований.\n\n";
 
-        game.serverRoom2Location.hasResearchDisk = true;
+        game.hasResearchDisk = true;
         return;
     }
 
@@ -102,13 +100,11 @@ void ServerRoom2Location::run() {
                  "\nВы закрываете правый клапан — вибрация утихает.\n"
                  "Стойка стабилизирована. Вы аккуратно извлекаете жёсткий диск.\n\n";
 
-            game.serverRoom2Location.hasResearchDisk = true;
+            game.hasResearchDisk = true;
         } else {
             cout <<
                  "\nВы закрываете левый клапан — стойка вздрагивает и искрит.\n"
                  "Короткое замыкание! Жёсткий диск уничтожен.\n\n";
-
-            game.serverRoom2Location.hasResearchDisk = false;
         }
         return;
     }
@@ -120,6 +116,4 @@ void ServerRoom2Location::run() {
     cout <<
          "\nВы тянетесь к диску — резкий удар током!\n"
          "Стойка коротит, диск мгновенно сгорает.\n\n";
-
-    game.serverRoom2Location.hasResearchDisk = false;
-}
+    }
