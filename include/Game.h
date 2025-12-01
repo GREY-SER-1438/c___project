@@ -1,7 +1,6 @@
 #pragma once
 #include "LocationBase.h"
 
-// Подключаем все локации
 #include "StartLocation-1.h"
 #include "ServerRoom1Location-3.h"
 #include "ServerRoom2Location-4.h"
@@ -12,7 +11,7 @@
 
 class Game {
 public:
-    // Каждая локация — как поле
+    // Все локации
     StartLocation startLocation;
     ServerRoom1Location serverRoom1Location;
     ServerRoom2Location serverRoom2Location;
@@ -32,7 +31,9 @@ public:
     bool catalystObtained = false;
     bool oxygenChipObtained = false;
 
-    Game();            // конструктор
+    void enableANSI(); // Для цветного текста
+
+    Game();
     void loop();       // главный цикл игры
-    void stop();       // остановка игры
+    void stop();
 };
