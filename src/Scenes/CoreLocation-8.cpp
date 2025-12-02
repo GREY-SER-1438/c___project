@@ -23,6 +23,7 @@ void CoreLocation::run()
         ask({1});
 
         cout << "Диск установлен. Панель загружает данные, интерфейс оживает.\n\n";
+        game.inventory.remove("hard_drive");
         insertedDisk = true;
     }
 
@@ -36,6 +37,7 @@ void CoreLocation::run()
         ask({1});
 
         cout << "Катализатор встает в паз. Контур стабилизируется, разряды гаснут.\n\n";
+        game.inventory.remove("catalyst");
         insertedCatalyst = true;
     }
 
@@ -49,6 +51,7 @@ void CoreLocation::run()
         ask({1});
 
         cout << "Микросхема подключена. Фильтры запускаются, поток воздуха выравнивается.\n\n";
+        game.inventory.remove("oxygen_chip");
         insertedChip = true;
     }
 

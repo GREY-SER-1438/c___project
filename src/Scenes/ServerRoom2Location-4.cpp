@@ -76,6 +76,8 @@ void ServerRoom2Location::run() {
              "\nВы вставляете охлаждающий модуль. Температура падает почти сразу.\n"
              "Стойка стабилизируется, и вы спокойно извлекаете диск с данными.\n\n";
         game.hasResearchDisk = true;
+        game.inventory.remove("cooling_module");
+        game.inventory.add("hard_drive");
         return;
     }
 
@@ -97,6 +99,7 @@ void ServerRoom2Location::run() {
                  "Стенки охлаждаются, стойка стабилизирована.\n"
                  "Вы извлекаете диск.\n\n";
             game.hasResearchDisk = true;
+            game.inventory.add("hard_drive");
         } else {
             cout <<
                  "\nЛевый клапан перекрыт — стойка резко вздрагивает.\n"

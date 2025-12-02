@@ -65,12 +65,15 @@ void ServerRoom1Location::run() {
         case 1:
             foundCoolingModule = true;
             cout << "Вы берёте охлаждающий модуль.\n";
+            game.inventory.add("cooling_module");
             break;
         case 2:
             cout << "Вы берёте повреждённый дисплей.\n";
+            game.inventory.add("broken_display");
             break;
         case 3:
             cout << "Вы берёте клавиатуру.\n";
+            game.inventory.add("old_keyboard");
             break;
         case 4:
             cout << "Вы ничего не берёте.\n";

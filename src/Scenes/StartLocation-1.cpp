@@ -93,9 +93,11 @@ void StartLocation::run() {
     if (itemChoice == 1) {
         cout << "\n\x1B[31mВы берёте фонарик.\x1B[0m Луч холодного света делает обстановку менее враждебной… но не менее странной.\n\n";
         game.startLocation.tookFlashlight = true;
+        game.inventory.add("flashlight");
     } else {
         cout << "\n\x1B[31mВы надеваете ПНВ.\x1B[0m Изображение слегка шумит, но в темноте станет куда проще ориентироваться.\n\n";
         game.startLocation.tookNVG = true;
+        game.inventory.add("visor");
     }
 
     cout <<
@@ -118,6 +120,7 @@ void StartLocation::run() {
         if (crowbarChoice == 1) {
             cout << "\n\x1B[31mВы поднимаете лом.\x1B[0m Не самое удобное оружие, но лучше, чем идти в неизвестность с пустыми руками.\n\n";
             game.startLocation.tookCrowbar = true;
+            game.inventory.add("crowbar");
         }
         else {
             cout << "\n\x1B[31mВы решаете не брать лом.\x1B[0m Если здесь и есть опасности, громоздкий металл может только помешать.\n\n";

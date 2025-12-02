@@ -186,6 +186,7 @@ void StorageLocation::run() {
                      "Микросхема найдена.\n\n";
 
                 game.oxygenChipObtained = true;
+                game.inventory.add("oxygen_chip");
                 cout << "1) Идти в реакторную. Центр станции ждёт.\n";
                 ask({1});
                 return;
@@ -202,6 +203,7 @@ void StorageLocation::run() {
                          "Микросхема у вас.\n\n";
 
                     game.oxygenChipObtained = true;
+                    game.inventory.add("oxygen_chip");
                 } else {
                     cout <<
                          "\nВы пытаетесь расчищать завал...\n"

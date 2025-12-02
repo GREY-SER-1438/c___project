@@ -93,6 +93,8 @@ void FuelCompartment2Location::run() {
                      "Катализатор выглядит нетронутым, хотя корпус на ощупь странно тёплый.\n"
                      "Вы забираете его.\n\n";
                 game.catalystObtained = true;
+                game.inventory.remove("protection");
+                game.inventory.add("catalyst");
                 break;
 
                 // --- 3) Продувка ---
@@ -111,6 +113,7 @@ void FuelCompartment2Location::run() {
                              "\nСлабый поток аккуратно сдувает осадок.\n"
                              "Катализатор остаётся невредим. Он словно давно ждал этого.\n\n";
                         game.catalystObtained = true;
+                        game.inventory.add("catalyst");
                         break;
 // todo странно звучит "будто вы слышите это не впервые", заменить
                     case 2:
@@ -162,6 +165,8 @@ void FuelCompartment2Location::run() {
                  "будто вакуум выжёг её медленно, но неотвратимо.\n"
                  "Вы добираетесь до соседнего отсека по внешним зацепам.\n\n";
             enteredViaSpace = true;
+            game.inventory.remove("spacesuit");
+
             break;
     }
 

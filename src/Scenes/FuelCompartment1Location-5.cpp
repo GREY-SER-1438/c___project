@@ -62,15 +62,18 @@ void FuelCompartment1Location::run() {
         switch (itemChoice) {
             case 1:
                 cout << "\nВы берёте перчатки. Они потрёпаны, но ещё служат защитой от копоти.\n\n";
+                game.inventory.add("worn_gloves");
                 break;
 
             case 2:
                 cout << "\nВы берёте инструменты. Ничто не мешает иметь под рукой набор.\n\n";
+                game.inventory.add("tools");
                 break;
 
             case 3:
                 cout << "\nВы забираете защитный модуль. Такой модуль пригодится при работе с остатками топлива.\n\n";
                 game.fuelCompartment1Location.foundProtectionModule = true;
+                game.inventory.add("protection");
                 break;
         }
 

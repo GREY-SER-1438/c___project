@@ -1,6 +1,9 @@
 #pragma once
+#include <iostream>
+using namespace std;
 #include "LocationBase.h"
 
+#include "Inventory.h"
 #include "StartLocation-1.h"
 #include "ServerRoom1Location-3.h"
 #include "ServerRoom2Location-4.h"
@@ -20,6 +23,8 @@ public:
     StorageLocation storageLocation;
     CoreLocation coreLocation;
 
+    Inventory inventory;
+
     // Указатель на текущую локацию
     LocationBase* currentLocation = nullptr;
 
@@ -30,6 +35,8 @@ public:
     bool hasResearchDisk = false;
     bool catalystObtained = false;
     bool oxygenChipObtained = false;
+
+    void showInventory();
 
     void enableANSI(); // Для цветного текста
 
