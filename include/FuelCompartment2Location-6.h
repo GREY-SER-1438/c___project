@@ -6,5 +6,5 @@ public:
     FuelCompartment2Location(Game& game) : LocationBase(game) {}
     void run() override;
 
-    bool enteredViaSpace;
+    bool enteredViaSpace = false;
 };

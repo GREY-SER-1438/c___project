@@ -5,7 +5,7 @@ using namespace std;
 
 void StorageLocation::run() {
     game.currentLocation = &game.coreLocation;
-    cout << "\n--- СКЛАДСКОЙ ОТСЕК ---\n\n";
+    cout << "\n======================================================================================\n\n";
 
     if (game.fuelCompartment2Location.enteredViaSpace) {
         cout <<
@@ -40,7 +40,6 @@ void StorageLocation::run() {
          "3) Осмотреть стеллажи\n";
 
     int choice1 = ask({1, 2, 3});
-
 
     switch (choice1) {
 

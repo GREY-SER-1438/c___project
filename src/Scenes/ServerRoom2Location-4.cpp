@@ -4,7 +4,7 @@
 using namespace std;
 
 void ServerRoom2Location::run() {
-    cout << "\n=== СЕРВЕРНАЯ — СЕКЦИЯ 2 ===\n\n";
+    cout << "\n======================================================================================\n\n";
     game.currentLocation = &game.fuelCompartment1Location;
 
     if (game.serverRoom1Location.usedTerminal) {
