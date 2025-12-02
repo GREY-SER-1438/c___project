@@ -12,13 +12,11 @@ int LocationBase::ask(const initializer_list<int>& options) {
         cout << "> ";
         cin >> input;
 
-        // --- проверка на инвентарь ---
         if (input == "I" || input == "i") {
-            game.showInventory();   // <-- вызываешь свою функцию
-            continue;               // снова ждём ввод
+            game.showInventory();
+            continue;
         }
 
-        // --- проверка: число ли это вообще ---
         bool isNumber = true;
         for (char c : input) {
             if (!isdigit(c)) {
@@ -32,10 +30,8 @@ int LocationBase::ask(const initializer_list<int>& options) {
             continue;
         }
 
-        // --- теперь точно число ---
         value = stoi(input);
 
-        // --- сравниваем с доступными вариантами ---
         for (int option : options) {
             if (value == option) {
                 valid = true;

@@ -65,15 +65,7 @@ void StartLocation::run() {
     cout << "Стоит заглянуть внутрь. В условиях неизвестности любая находка может быть полезна.\n";
     cout << "1) Войти в мастерскую\n";
 
-// todo
-    int a = ask({1,1488});
-    if (a == 1488) {
-        game.hasResearchDisk = true;
-        game.catalystObtained = true;
-        game.oxygenChipObtained = true;
-        game.currentLocation = &game.coreLocation;
-        return;
-    }
+    ask({1});
 
     cout <<
          "\n\x1B[31mВы осторожно переступаете через порог.\x1B[0m Мастерская просторнее и выглядит\n"
